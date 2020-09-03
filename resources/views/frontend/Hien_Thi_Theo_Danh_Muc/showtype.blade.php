@@ -15,7 +15,7 @@
                         <div class="input-checkbox">
                             <input type="checkbox" id="brand-1">
                             <label for="brand-1">
-                                <span></span> 
+                            
                                 <a href="{{URL::to('/danh-muc-san-pham/'.$t->Typeid)}}">{{ $t -> Typename }}</a>
                             </label>
                         </div>
@@ -55,7 +55,7 @@
                     @foreach($type_by_id as $key => $ti)
                     <div class="col-md-4">
                         <div class="product">
-                            <div class="product-img">
+                            <div class="product-img" style="height: 350px;">
                                 <img src="{{asset('frontend/dist/img/Nam/'.$ti -> Image)}}" alt="">
                             </div>
                             <div class="product-body">

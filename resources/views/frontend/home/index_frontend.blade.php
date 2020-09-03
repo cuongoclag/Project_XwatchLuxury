@@ -56,7 +56,7 @@
                                 <!-- product -->
                               @foreach($new_product as $key => $hp)
                                 <div class="product">
-                            <div class="product-img">
+                            <div class="product-img" style="height: 350px;">
                                 <img src="{{asset('frontend/dist/img/Nam/'.$hp -> Image)}}" alt="">
                             </div>
                             <div class="product-body">
@@ -138,7 +138,7 @@
                                 <!-- product -->
                                 @foreach($hot_product as $key => $hp)
                                 <div class="product">
-                            <div class="product-img">
+                            <div class="product-img" style="height: 350px;">
                                 <img src="{{asset('frontend/dist/img/Nam/'.$hp -> Image)}}" alt="">
                             </div>
                             <div class="product-body">
