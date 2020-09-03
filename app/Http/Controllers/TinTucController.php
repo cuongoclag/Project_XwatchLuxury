@@ -21,7 +21,7 @@ class TinTucController extends Controller
     // }
     public function index()
     {
-        $list_tin_tuc = tin_tuc::paginate(3);
+        $list_tin_tuc = tin_tuc::all();//paginate(9)
         return view('frontend/tin_tuc/tin_tuc',['list_tin_tuc'=>$list_tin_tuc]);
     }
     /**
