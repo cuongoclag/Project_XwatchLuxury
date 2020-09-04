@@ -140,6 +140,9 @@
                                 <div class="product">
                             <div class="product-img" style="height: 350px;">
                                 <img src="{{asset('frontend/dist/img/Nam/'.$hp -> Image)}}" alt="">
+                                <div class="product-label">
+									<span class="sale">HOT</span>
+								</div>
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name"><a href="#">{{ $hp -> Productname}}</a></h3>
