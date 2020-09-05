@@ -56,8 +56,8 @@
                     <form action="{{ URL::to('/save_Delivery_address') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label>Tên Người Nhận</label>
-                            <input class="input" type="text" name="Recipient_Name" value="{{$customer_info -> Customername}}" title="Nhập tên người Nhận." pattern="[a-zA-Z]+" required>
+                            <label >Tên Người Nhận</label>
+                            <input class="input" type="text" name="Recipient_Name" value="{{$customer_info -> Customername}}" title="Nhập tên người Nhận." pattern="[A-Za-z'\.\-\s\,]" required>
                         </div>
                         <div class="form-group">
                             <label>Email Người Nhận</label>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="order-notes">
                             <label>Ghi Chú</label>
-                            <textarea class="input" name="cart_note" placeholder="Ghi Chú" required></textarea>
+                            <textarea class="input" name="cart_note" placeholder="Ghi Chú" required title="Ghi Chú Đơn Hàng" ></textarea>
                         </div>
                         <div class="form-group">
                             <input class="hidden" type="text" name="Customerid" value="{{Session::get('khach_hang_dn')->Customerid}}"> 
@@ -100,7 +100,7 @@
                                             <div class="form-group">
                                                 <label>CARD NUMBER</label>
                                                 <div class="input-group">
-                                                    <input type="tel" name="Card_Number" class="form-control" placeholder="Valid Card Number" />
+                                                    <input type="tel" name="Card_Number" class="form-control" placeholder="Valid Card Number" pattern="[0-9]{5,20}" required title="Card Number (gồm 5 đển 20 chữ số)"/>
                                                     <span class="input-group-addon"><span class="fa fa-credit-card"></span></span>
                                                 </div>
                                             </div>
@@ -110,13 +110,13 @@
                                         <div class="col-xs-7 col-md-7">
                                             <div class="form-group">
                                                 <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                                <input type="tel" name="Card_EXPIRATION" class="form-control" placeholder="MM / YY" />
+                                                <input type="tel" name="Card_EXPIRATION" class="form-control" placeholder="MM / YY" pattern="[0-9]{4}" required title="Ngày Hết Hạn (gồm 4 chữ số, Tháng và năm)" />
                                             </div>
                                         </div>
                                         <div class="col-xs-5 col-md-5 pull-right">
                                             <div class="form-group">
                                                 <label>CV CODE</label>
-                                                <input type="tel" name="Card_Code" class="form-control" placeholder="CVC" />
+                                                <input type="tel" name="Card_Code" class="form-control" placeholder="CVC" pattern="[0-9]{3}" required title="Số CVC gồm 3 Chữ Số" />
                                             </div>
                                         </div>
                                     </div>
@@ -124,7 +124,7 @@
                                         <div class="col-xs-12">
                                             <div class="form-group">
                                                 <label>CARD OWNER</label>
-                                                <input type="text" name="Card_Owner" class="form-control" placeholder="Card Owner Names" />
+                                                <input type="text" name="Card_Owner" class="form-control" placeholder="Card Owner Names" pattern="[A-Za-z'\.\-\s\,]" required title="Tên Chủ Thẻ" />
                                             </div>
                                         </div>
                                     </div>
