@@ -39,7 +39,7 @@
                         <td class="center"><a href="{{ URL::to('admin/order/management_order/Status1/' .$ord_pro->Orderid) }}">Đã Xác Nhận</a></td>
                         @endif
                         @if($ord_pro -> OrderStatus == 2)
-                        <td class="center"><a href="{{ URL::to('admin/order/management_order/UnStatus/' .$ord_pro->Orderid) }}">Đã Giao Hàng</a></td>
+                        <td class="center">Đã Giao Hàng</td>
                         @endif
                         <td>{{ $ord_pro -> Payment }}</td>
                         <td class="center"><a href="{{ URL::to('admin/order/order_details/' .$ord_pro->Orderid) }}"><i class="fas fa-sign-out-alt"></i></a></td>

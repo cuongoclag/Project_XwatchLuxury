@@ -29,8 +29,6 @@
                 <th>Trạng Thái</th>
                 <th>Thanh Toán</th>
                 <th>Chi Tiết</th>
-                
-                <th>Xóa</th>
             </tr>
         </thead>
         <tbody>
@@ -54,14 +52,14 @@
                 <td>{{$info ->Payment }}</td>
                 
                 <td class="center"><a href="{{URL::to('details_order/'.$info->Orderid)}}"><i class="fas fa-sign-out-alt"></i></a></td>
-                @if($info ->OrderStatus == 0)
+                <!-- @if($info ->OrderStatus == 0)
                 <td class="center">
                     <a onclick="return confirm('Are you sure to delete?')" 
                     href="{{URL::to('delete_order/'.$info->Orderid)}}"><i class="fas fa-trash-alt"></i></a>
                 </td>
                 @else
                 <td><i class="fas fa-exclamation-triangle"></i></td>
-                @endif
+                @endif -->
             </tr>
             @endforeach
             
