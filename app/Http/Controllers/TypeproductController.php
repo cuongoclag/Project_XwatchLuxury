@@ -93,19 +93,19 @@ class TypeproductController extends Controller
             {
                 case '1':
                     $type_by_id = DB::table('product')->join('typeproduct','product.Typeid','=','typeproduct.Typeid')
-                    ->where('product.Typeid',$Typeid)->orderby('Price','desc')->get();
+                    ->where('product.Typeid',$Typeid)->where('Status',1)->orderby('Price','desc')->get();
                     return view('frontend/Hien_Thi_Theo_Danh_Muc/showtype')->with('type',$type)->with('type_by_id',$type_by_id);
                 break;
 
                 case '2':
                     $type_by_id = DB::table('product')->join('typeproduct','product.Typeid','=','typeproduct.Typeid')
-                    ->where('product.Typeid',$Typeid)->orderby('Price','asc')->get();
+                    ->where('product.Typeid',$Typeid)->where('Status',1)->orderby('Price','asc')->get();
                     return view('frontend/Hien_Thi_Theo_Danh_Muc/showtype')->with('type',$type)->with('type_by_id',$type_by_id);
                 break;
 
                 default:
                 $type = DB::table('typeproduct')->orderby('Typeid','desc')->get();
-                $type_by_id = DB::table('product')->join('typeproduct','product.Typeid','=','typeproduct.Typeid')
+                $type_by_id = DB::table('product')->where('Status',1)->join('typeproduct','product.Typeid','=','typeproduct.Typeid')
                 ->where('product.Typeid',$Typeid)->get();
                     return view('frontend/Hien_Thi_Theo_Danh_Muc/showtype')->with('type',$type)->with('type_by_id',$type_by_id);
             }

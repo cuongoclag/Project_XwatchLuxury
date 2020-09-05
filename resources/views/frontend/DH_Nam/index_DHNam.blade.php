@@ -58,6 +58,11 @@
                         <div class="product">
                             <div class="product-img">
                                 <img src="{{asset('frontend/dist/img/Nam/'.$lp -> Image)}}" alt="" height="320px">
+                                @if($lp->Hot == 1 && $lp->Status == 1)
+                                    <div class="product-label">
+									    <span class="sale">HOT</span>
+								    </div>
+                                @endif
                             </div>
                             <div class="product-body">
                                 <h3 class="product-name" style="height:50px"><a href="#">{{ $lp -> Productname}}</a></h3>
@@ -102,11 +107,7 @@
                 <!-- /store products -->
                 <!-- store bottom filter -->
                 <!-- store bottom filter -->
-                <!-- <div class="store-filter clearfix">
-                    <ul style="float:right;">
-                        {{ $list_product->links() }}
-                    </ul>
-                </div> -->
+                
                 <!-- /store bottom filter -->
                 <!-- /store bottom filter -->
             </div>

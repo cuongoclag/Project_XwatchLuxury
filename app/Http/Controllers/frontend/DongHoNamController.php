@@ -33,7 +33,7 @@ class DongHoNamController extends FrontendController
             }
         }
         $list_product = DB::table('product')->orderby('Price','desc')->where('Status',1)->limit(15)->get();
-        $list_product = DB::table('product')->where('Status',1)->paginate(6);
+       
         return  view('frontend.DH_Nam.index_DHNam')->with('type',$type)->with('list_product', $list_product);
     }
 
