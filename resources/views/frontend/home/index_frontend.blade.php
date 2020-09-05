@@ -140,6 +140,7 @@
                                 <!-- product -->
                                 @foreach($hot_product as $key => $hp)
                                 <div class="product">
+<<<<<<< HEAD
                                     <div class="product-img" style="height: 350px;">
                                         <img src="{{asset('frontend/dist/img/Nam/'.$hp -> Image)}}" alt="">
                                     </div>
@@ -181,6 +182,27 @@
                                         </div>
                                     </form>
                                     @endif
+=======
+                            <div class="product-img" style="height: 350px;">
+                                <img src="{{asset('frontend/dist/img/Nam/'.$hp -> Image)}}" alt="">
+                                <div class="product-label">
+									<span class="sale">HOT</span>
+								</div>
+                            </div>
+                            <div class="product-body">
+                                <h3 class="product-name"><a href="#">{{ $hp -> Productname}}</a></h3>
+                                <h4 class="product-price">{{ $hp -> Price }}$</h4>
+                                <div class="product-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <div class="product-btns">
+                                    <button onclick="window.location.href = '{{ URL::to('/Details-Product/'.$hp-> Productid) }}'" 
+                                    class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Xem Chi tiết</span></button>
+>>>>>>> d8f026345657645c251d23db9e6f915069c25e3a
                                 </div>
                                 @endforeach
                                 <!-- /product -->
