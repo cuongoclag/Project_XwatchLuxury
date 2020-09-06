@@ -81,9 +81,9 @@
                             </div>
                             <?php 
                                 $content = Cart::content();
-                                $null = 0; 
+                                $null = 0;
                                 foreach($content as $v_content){
-                                    if($v_content->id == $lp->Productid){
+                                    if($v_content->id == $lp->Productid && $v_content->qty == 2){
                                         $null = 1;
                                     }
                                 }

@@ -28,6 +28,9 @@ Route::prefix('login/')->group(function () {
     route::get('/logout', 'loginController@getlogout');
     route::get('/login/getlogin', 'loginController@getLogin_1')->name('getlogin');
     route::post('/login/getlogin', 'loginController@getlogin_2')->name('getlogin');
+
+    route::get('/login/getLogincart', 'loginController@getLogincart')->name('getLogincart');
+    route::post('/login/getloginCart', 'loginController@getlogin_cart')->name('getlogincart');
     route::get('/register/getregister', 'loginController@getRegister')->name('getregister');
     route::post('/register/getregister', 'loginController@getinfo')->name('getregister');
 });

@@ -11,7 +11,12 @@ class loginController extends Controller
 {
     public function getLogin_1(){
         return view('frontend/login/login');
-    }
+	}
+	
+	public function getLogincart(){
+        return view('frontend/login/logincart');
+	}
+	
     public function getRegister(){
         return view('frontend/login/register');
     }
@@ -47,7 +52,6 @@ class loginController extends Controller
 		]); 
 			echo 'Đã đăng ký thành công';
 			return redirect('admin/user/user-list')->with('alert','Bạn đăng ký thành công');
-    	
     }
 
     public function getlogin_2(Request $request)
@@ -61,6 +65,21 @@ class loginController extends Controller
 			return redirect('/index-frontend/Homes')->cookie('khach_hang_dn',$kh);
 			
 		return redirect('/index-frontend/Homes');
+		}
+		return redirect('login/login/getlogin')->with('alert','Đăng nhập không thành công');
+	}
+
+	public function getlogin_cart(Request $request)
+    {
+    	$user = $request->username;
+    	$pass = $request->password;
+		$kh = customer::where('Customername', $user)->where('customerpass', $pass)->first();
+		if($kh){
+			$request->session()->put('khach_hang_dn', $kh);
+			if($request->has('Th_Ghi_nho'))
+			return redirect('/index-frontend/Homes')->cookie('khach_hang_dn',$kh);
+			
+			return redirect('Checkout_Cart');
 		}
 		return redirect('login/login/getlogin')->with('alert','Đăng nhập không thành công');
 	}
@@ -78,7 +97,7 @@ class loginController extends Controller
 		if ($request->session()->has('khach_hang_dn' )) {
 			return redirect('Checkout_Cart');
 		} 
-		return redirect('login/login/getlogin');
+		return redirect('login/login/getLogincart');
 	} 
 
 	//  function show info thông tin khách hàng.
